@@ -15,9 +15,16 @@ namespace Ch05Ex04
 
             WriteLine($"Here are {friendNames.Length} of my friends:");
 
+            WriteLine("for");
             for (int i = 0; i < friendNames.Length; i++)
             {
                 WriteLine(friendNames[i]);
+            }
+
+            WriteLine("foreach");
+            foreach (string name in friendNames)
+            {
+                WriteLine(name);
             }
 
             ReadKey();
