@@ -1,1 +1,6 @@
 C:\Users\dfontes\OneDrive - Snipp Interactive, Inc\Documents\training-projects\beginnigCsharp\Chapter05\Ch05Ex03\Ch05Ex03\bin\Debug\Ch05Ex03.exe.config
+C:\Users\dfontes\OneDrive - Snipp Interactive, Inc\Documents\training-projects\beginnigCsharp\Chapter05\Ch05Ex03\Ch05Ex03\bin\Debug\Ch05Ex03.exe
+C:\Users\dfontes\OneDrive - Snipp Interactive, Inc\Documents\training-projects\beginnigCsharp\Chapter05\Ch05Ex03\Ch05Ex03\bin\Debug\Ch05Ex03.pdb
+C:\Users\dfontes\OneDrive - Snipp Interactive, Inc\Documents\training-projects\beginnigCsharp\Chapter05\Ch05Ex03\Ch05Ex03\obj\Debug\Ch05Ex03.csprojResolveAssemblyReference.cache
+C:\Users\dfontes\OneDrive - Snipp Interactive, Inc\Documents\training-projects\beginnigCsharp\Chapter05\Ch05Ex03\Ch05Ex03\obj\Debug\Ch05Ex03.exe
+C:\Users\dfontes\OneDrive - Snipp Interactive, Inc\Documents\training-projects\beginnigCsharp\Chapter05\Ch05Ex03\Ch05Ex03\obj\Debug\Ch05Ex03.pdb
