@@ -1,0 +1,6 @@
+/Users/derciliofontes/projects/BegVCSharp/Chapter04/Ch04Ex01/Ch04Ex01/bin/Debug/Ch04Ex01.exe
+/Users/derciliofontes/projects/BegVCSharp/Chapter04/Ch04Ex01/Ch04Ex01/bin/Debug/Ch04Ex01.pdb
+/Users/derciliofontes/projects/BegVCSharp/Chapter04/Ch04Ex01/Ch04Ex01/obj/x86/Debug/Ch04Ex01.csprojAssemblyReference.cache
+/Users/derciliofontes/projects/BegVCSharp/Chapter04/Ch04Ex01/Ch04Ex01/obj/x86/Debug/Ch04Ex01.csproj.CoreCompileInputs.cache
+/Users/derciliofontes/projects/BegVCSharp/Chapter04/Ch04Ex01/Ch04Ex01/obj/x86/Debug/Ch04Ex01.exe
+/Users/derciliofontes/projects/BegVCSharp/Chapter04/Ch04Ex01/Ch04Ex01/obj/x86/Debug/Ch04Ex01.pdb
