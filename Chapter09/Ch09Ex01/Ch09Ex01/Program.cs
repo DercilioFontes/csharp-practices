@@ -12,10 +12,11 @@ namespace Ch09Ex01
     public interface IMyBaseInterface { }
     internal interface IMyBaseInterface2 { }
     internal interface IMyInterface : IMyBaseInterface, IMyBaseInterface2 { }
-    internal sealed class MyComplexClass : MyClass, IMyInterface {
+    internal sealed class MyComplexClass : MyClass, IMyInterface
+    {
         public MyComplexClass ShallowCopy()
         {
-            return (MyComplexClass) MemberwiseClone();
+            return (MyComplexClass)MemberwiseClone();
         }
     }
     class Program
