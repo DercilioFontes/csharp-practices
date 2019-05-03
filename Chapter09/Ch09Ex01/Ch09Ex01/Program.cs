@@ -12,6 +12,9 @@ namespace Ch09Ex01
     public interface IMyBaseInterface { }
     internal interface IMyBaseInterface2 { }
     internal interface IMyInterface : IMyBaseInterface, IMyBaseInterface2 { }
+    /// <summary>
+    /// My more complex class
+    /// </summary>
     internal sealed class MyComplexClass : MyClass, IMyInterface
     {
         public MyComplexClass ShallowCopy()
@@ -19,6 +22,9 @@ namespace Ch09Ex01
             return (MyComplexClass)MemberwiseClone();
         }
     }
+    /// <summary>
+    /// This class contains my program!
+    /// </summary>
     class Program
     {
         static void Main(string[] args)
