@@ -9,7 +9,45 @@ namespace Ch10Ex01
     public class MyClass
     {
         public readonly string Name;
+        private string myString;
         private int intVal;
+        public int intVal2
+        {
+            get;
+            set;
+        }
+        private string String2 { get; set; }
+        
+        // prop
+        public int MyProperty { get; set; }
+
+        // propa
+        public static int GetMyProperty(DependencyObject obj)
+        {
+            return (int)obj.GetValue(MyPropertyProperty);
+        }
+
+        // propdp
+        public int MyProperty
+        {
+            get { return (int)GetValue(MyPropertyProperty); }
+            set { SetValue(MyPropertyProperty, value); }
+        }
+
+        // propfull
+        private int myVar;
+
+        public int MyProperty
+        {
+            get { return myVar; }
+            set { myVar = value; }
+        }
+        
+        // propg
+        public int MyProperty { get; private set; }
+
+        // getter-only auto-property, and it initialization
+        public int MyIntProp2 { get; } = 9;
 
         public int Val
         {
@@ -35,5 +73,18 @@ namespace Ch10Ex01
 
         private int myDoubledInt = 5;
         public int myDoubledIntProp => (myDoubledInt * 2);
+
+        public string MyString
+        {
+            get
+            {
+                return myString;
+            }
+
+            set
+            {
+                myString = value;
+            }
+        }
     }
 }
