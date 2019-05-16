@@ -43,7 +43,8 @@ namespace Ch11Ex01
             ((Chicken)animalArrayList[1]).LayEgg();
             WriteLine();
             WriteLine("Additional manipulation of ArrayList:");
-            animalArrayList.RemoveAt(0);
+            //animalArrayList.RemoveAt(0);
+            animalArrayList.Remove(myCow2);
             ((Animal)animalArrayList[0]).Feed();
             animalArrayList.AddRange(animalArray);
             ((Chicken)animalArrayList[2]).LayEgg();
@@ -52,6 +53,7 @@ namespace Ch11Ex01
             myCow1.Name = "Mary";
             WriteLine($"the animal is now " +
                 $"called {((Animal)animalArrayList[1]).Name}.");
+            WriteLine(animalArray.Count<Animal>());
             ReadKey();
         }
     }
