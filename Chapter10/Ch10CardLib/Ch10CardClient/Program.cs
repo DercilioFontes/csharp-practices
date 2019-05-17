@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Console;
-using Ch10CardLib;
+using Ch11CardLib;
 
-namespace Ch10CardClient
+namespace Ch11CardClient
 {
     class Program
     {
