@@ -22,5 +22,11 @@ namespace Ch11Ex02b
             get { return (Animal)Dictionary[animalID]; }
             set { Dictionary[animalID] = value; }
         }
+
+        public new IEnumerator GetEnumerator()
+        {
+            foreach (object animal in Dictionary.Values)
+                yield return (Animal)animal;
+        }
     }
 }
