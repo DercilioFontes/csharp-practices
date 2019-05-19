@@ -7,15 +7,13 @@
     <ProjectGuid>{20559241-53C4-468B-B1FD-ACAFD77EE53F}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Ch10CardClient</RootNamespace>
-    <AssemblyName>Ch10CardClient</AssemblyName>
+    <RootNamespace>Ch11CardClient</RootNamespace>
+    <AssemblyName>Ch11CardClient</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <BaseDirectory>..\..\..\Chapter11\Ch11CardLib\Ch11CardClient</BaseDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>

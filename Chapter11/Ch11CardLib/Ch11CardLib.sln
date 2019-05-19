@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch11CardLib", "Ch11CardLib\Ch11CardLib.csproj", "{33440B3E-4680-4338-B5FE-7CC7E2411859}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch11CardClient", "..\..\Chapter10\Ch10CardLib\Ch10CardClient\Ch11CardClient.csproj", "{20559241-53C4-468B-B1FD-ACAFD77EE53F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch11CardClient", "Ch11CardClient\Ch11CardClient.csproj", "{20559241-53C4-468B-B1FD-ACAFD77EE53F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
