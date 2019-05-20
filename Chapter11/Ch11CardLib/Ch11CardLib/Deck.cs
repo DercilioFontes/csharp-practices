@@ -20,6 +20,40 @@ namespace Ch11CardLib
             }
         }
 
+        /// <summary>
+        /// Nondefault constructor. Allows aces to be set high.
+        /// </summary>
+        /// <param name="isAceHigh">If set to <c>true</c> is ace high.</param>
+        public Deck(bool isAceHigh) : this()
+        {
+            Card.isAceHigh = isAceHigh;
+        }
+
+        /// <summary>
+        /// Nondefault constructor. Allows a trump suit to be used.
+        /// </summary>
+        /// <param name="useTrumps">If set to <c>true</c> use trumps.</param>
+        /// <param name="trump">Trump.</param>
+        public Deck(bool useTrumps, Suit trump) : this()
+        {
+            Card.useTrumps = useTrumps;
+            Card.trump = trump;
+        }
+
+        /// <summary>
+        /// Nondefault constructor. Allows aces to be set high and a trump suit
+        /// to be used.
+        /// </summary>
+        /// <param name="isAceHigh">If set to <c>true</c> is ace high.</param>
+        /// <param name="useTrumps">If set to <c>true</c> use trumps.</param>
+        /// <param name="trump">Trump.</param>
+        public Deck(bool isAceHigh, bool useTrumps, Suit trump) : this()
+        {
+            Card.isAceHigh = isAceHigh;
+            Card.useTrumps = useTrumps;
+            Card.trump = trump;
+        }
+
         public Card GetCard(int cardNum)
         {
             if (cardNum >= 0 && cardNum <= 51)
