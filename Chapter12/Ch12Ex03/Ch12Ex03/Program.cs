@@ -17,11 +17,13 @@ namespace Ch12Ex03
             route.Add(new Vector(0.5, 45.0));
             route.Add(new Vector(2.5, 315.0));
             WriteLine(route.Sum());
-            Comparison<Vector> sorter = new Comparison<Vector>(VectorDelegates.Compare);
-            route.Sort(sorter);
+            //Comparison<Vector> sorter = new Comparison<Vector>(VectorDelegates.Compare);
+            //route.Sort(sorter);
+            route.Sort(VectorDelegates.Compare);
             WriteLine(route.Sum());
-            Predicate<Vector> searcher = new Predicate<Vector>(VectorDelegates.TopRightQuadrant);
-            Vectors topRightQuadrantRoute = new Vectors(route.FindAll(searcher));
+            //Predicate<Vector> searcher = new Predicate<Vector>(VectorDelegates.TopRightQuadrant);
+            //Vectors topRightQuadrantRoute = new Vectors(route.FindAll(searcher));
+            Vectors topRightQuadrantRoute = new Vectors(route.FindAll(VectorDelegates.TopRightQuadrant));
             WriteLine(topRightQuadrantRoute.Sum());
             ReadKey();
         }
