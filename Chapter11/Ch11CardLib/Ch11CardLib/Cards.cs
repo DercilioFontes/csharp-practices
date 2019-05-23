@@ -7,21 +7,22 @@ using System.Threading.Tasks;
 
 namespace Ch11CardLib
 {
-    class Cards : CollectionBase, ICloneable
+    //class Cards : CollectionBase, ICloneable
+    class Cards : List<Card>, ICloneable
     {
-        public void Add(Card newCard)
-        {
-            List.Add(newCard);
-        }
-        public void Remove(Card oldCard)
-        {
-            List.Remove(oldCard);
-        }
-        public Card this[int cardIndex]
-        {
-            get { return (Card)List[cardIndex]; }
-            set { List[cardIndex] = value; }
-        }
+        //public void Add(Card newCard)
+        //{
+        //    List.Add(newCard);
+        //}
+        //public void Remove(Card oldCard)
+        //{
+        //    List.Remove(oldCard);
+        //}
+        //public Card this[int cardIndex]
+        //{
+        //    get { return (Card)List[cardIndex]; }
+        //    set { List[cardIndex] = value; }
+        //}
 
         /// <summary>
         /// Utility method for copying card instances into another Cards
@@ -31,7 +32,7 @@ namespace Ch11CardLib
         /// <param name="targetCards"></param>
         public void CopyTo(Cards targetCards)
         {
-            for(int index = 0; index < this.Count; index++)
+            for (int index = 0; index < Count; index++)
             {
                 targetCards[index] = this[index];
             }
@@ -42,12 +43,12 @@ namespace Ch11CardLib
         /// This calls the Contains() method of the ArrayList for the collection,
         /// which you access through the InnerList property.
         /// </summary>
-        public bool Contains(Card card) => InnerList.Contains(card);
+        //public bool Contains(Card card) => InnerList.Contains(card);
 
         public object Clone()
         {
             Cards newCards = new Cards();
-            foreach(Card sourceCard in List)
+            foreach(Card sourceCard in this)
             {
                 newCards.Add((Card)sourceCard.Clone());
             }
