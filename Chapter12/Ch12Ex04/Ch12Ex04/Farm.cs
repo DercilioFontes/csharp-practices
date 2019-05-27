@@ -31,18 +31,33 @@ namespace Ch12Ex04
                 animal.Feed();
             }
         }
-        public Farm<Cow> GetCows()
+
+        public Farm<U> GetSpecies<U>() where U : T
         {
-            Farm<Cow> cowFarm = new Farm<Cow>();
+            Farm<U> speciesFarm = new Farm<U>();
             foreach(T animal in animals)
             {
-                if(animal is Cow)
+                if(animal is U)
                 {
-                    cowFarm.Animals.Add(animal as Cow);
+                    speciesFarm.Animals.Add(animal as U);
                 }
+
             }
-            return cowFarm;
+            return speciesFarm;
         }
+
+        //public Farm<Cow> GetCows()
+        //{
+        //    Farm<Cow> cowFarm = new Farm<Cow>();
+        //    foreach(T animal in animals)
+        //    {
+        //        if(animal is Cow)
+        //        {
+        //            cowFarm.Animals.Add(animal as Cow);
+        //        }
+        //    }
+        //    return cowFarm;
+        //}
 
     }
 }

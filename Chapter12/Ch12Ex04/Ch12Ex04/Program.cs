@@ -17,9 +17,11 @@ namespace Ch12Ex04
             farm.Animals.Add(new Chicken("Mary"));
             farm.Animals.Add(new SuperCow("Ben"));
             farm.MakeNoises();
-            Farm<Cow> dairyFarm = farm.GetCows();
+            Farm<Cow> dairyFarm = farm.GetSpecies<Cow>();
             dairyFarm.FeedTheAnimals();
-            foreach(Cow cow in dairyFarm)
+            Farm<Chicken> poultryFarm = farm.GetSpecies<Chicken>();
+            poultryFarm.FeedTheAnimals();
+            foreach (Cow cow in dairyFarm)
             {
                 if(cow is SuperCow)
                 {
