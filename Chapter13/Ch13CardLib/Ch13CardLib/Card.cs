@@ -7,8 +7,8 @@ namespace Ch13CardLib
 {
     public class Card : ICloneable
     {
-        private readonly Rank rank;
-        private readonly Suit suit;
+        public readonly Rank rank;
+        public readonly Suit suit;
 
         /// <summary>
         /// Flag for trump usage. If true, trumps are valued higher
