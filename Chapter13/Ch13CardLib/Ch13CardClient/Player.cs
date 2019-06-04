@@ -26,6 +26,8 @@ namespace Ch13CardClient
             for(int i = 1; i < PlayHand.Count; i++)
             {
                 won &= PlayHand[i].suit == match;
+                if (!won)
+                    break;
             }
             return won;
         }
