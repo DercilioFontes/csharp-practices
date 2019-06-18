@@ -24,5 +24,10 @@ namespace Ch14Ex01
         {
             InitializeComponent();
         }
+
+        private void rotatedButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

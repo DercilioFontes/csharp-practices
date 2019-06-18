@@ -8,7 +8,7 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="211,152,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="rotatedButton" Content="2nd button" Width="75" Height="22" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+        <Button x:Name="rotatedButton" Content="2nd button" Width="75" Height="22" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Click="rotatedButton_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
