@@ -7,6 +7,28 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525" KeyDown="Window_KeyDown" PreviewKeyDown="Window_PreviewKeyDown">
     <Grid KeyDown="Grid_KeyDown" PreviewKeyDown="Grid_PreviewKeyDown">
+        <DockPanel Background="Azure">
+            <Border DockPanel.Dock="Top" Padding="10" Margin="5" Background="Aquamarine" Height="45">
+                <Label>1) DockPanel.Dock="Top"</Label>
+            </Border>
+            <Border DockPanel.Dock="Top" Padding="10" Margin="5" Background="PaleVioletRed" Height="45" Width="200">
+                <Label>2) DockPanel.Dock="Top"</Label>
+            </Border>
+            <Border DockPanel.Dock="Left" Padding="10" Margin="5" Background="Bisque" Width="200">
+                <Label>3) DockPanel.Dock="Left"</Label>
+            </Border>
+            <Border DockPanel.Dock="Bottom" Padding="10" Margin="5" Background="Ivory" Width="200" HorizontalAlignment="Right">
+                <Label>4) DockPanel.Dock="Bottom"</Label>
+            </Border>
+            <Border Padding="10" Margin="5" Background="BlueViolet" Width="200" HorizontalAlignment="Right">
+                <Label>5) Last control</Label>
+            </Border>
+        </DockPanel>
+        
+        <!--<Canvas Background="AliceBlue">
+            <Rectangle Canvas.Left="50" Canvas.Top="50" Height="40" Width="100" Stroke="Black"  Fill="Chocolate"/>
+            <Rectangle Canvas.Right="50" Canvas.Bottom="50" Height="40" Width="100" Stroke="Black"  Fill="Bisque"/>
+        </Canvas>-->
         <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="211,152,0,0" VerticalAlignment="Top" Width="75" Grid.Column="0" Grid.Row="0"/>
         <Button x:Name="rotatedButton" Content="2nd button" Width="75" Height="22" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" KeyDown="rotatedButton_KeyDown" PreviewKeyDown="rotatedButton_PreviewKeyDown" Grid.Column="1" Grid.Row="1">
             <Button.RenderTransform>
@@ -18,5 +40,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
+        
     </Grid>
+    
 </Window>
