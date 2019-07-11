@@ -7,7 +7,15 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525" KeyDown="Window_KeyDown" PreviewKeyDown="Window_PreviewKeyDown">
     <Grid KeyDown="Grid_KeyDown" PreviewKeyDown="Grid_PreviewKeyDown">
-        <DockPanel Background="Azure">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="109*"/>
+            <RowDefinition Height="210*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="191*"/>
+            <ColumnDefinition Width="326*"/>
+        </Grid.ColumnDefinitions>
+        <DockPanel Background="Azure" Grid.ColumnSpan="3">
             <Border DockPanel.Dock="Top" Padding="10" Margin="5" Background="Aquamarine" Height="45">
                 <Label>1) DockPanel.Dock="Top"</Label>
             </Border>
@@ -24,12 +32,12 @@
                 <Label>5) Last control</Label>
             </Border>
         </DockPanel>
-        
+
         <!--<Canvas Background="AliceBlue">
             <Rectangle Canvas.Left="50" Canvas.Top="50" Height="40" Width="100" Stroke="Black"  Fill="Chocolate"/>
             <Rectangle Canvas.Right="50" Canvas.Bottom="50" Height="40" Width="100" Stroke="Black"  Fill="Bisque"/>
         </Canvas>-->
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="211,152,0,0" VerticalAlignment="Top" Width="75" Grid.Column="0" Grid.Row="0"/>
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="28,71,0,0" VerticalAlignment="Top" Width="75" Grid.Column="0" Grid.Row="0"/>
         <Button x:Name="rotatedButton" Content="2nd button" Width="75" Height="22" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" KeyDown="rotatedButton_KeyDown" PreviewKeyDown="rotatedButton_PreviewKeyDown" Grid.Column="1" Grid.Row="1">
             <Button.RenderTransform>
                 <TransformGroup>
@@ -40,7 +48,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        
+        <GridSplitter Grid.RowSpan="2" Width="3" BorderThickness="2" BorderBrush="Black"/>
     </Grid>
-    
+
 </Window>
