@@ -21,13 +21,9 @@
             <TabControl x:Name="tabControl" Grid.RowSpan="2" Canvas.Left="10" Canvas.Top="2" Width="408" Height="208" Grid.Row="1">
                 <TabItem Header="Game">
                     <Grid Background="#FFE5E5E5">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="11*"/>
-                            <ColumnDefinition Width="190*"/>
-                        </Grid.ColumnDefinitions>
-                        <CheckBox x:Name="playAgainstComputerCheck" Content="Play against computer" HorizontalAlignment="Left" Margin="11,33,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                        <CheckBox x:Name="playAgainstComputerCheck" Content="Play against computer" HorizontalAlignment="Left" Margin="11,33,0,0" VerticalAlignment="Top" Checked="playAgainstComputerCheck_Checked"/>
                         <Label Content="Number of players" Grid.Column="1" HorizontalAlignment="Left" Margin="10,54,0,0" VerticalAlignment="Top"/>
-                        <ComboBox x:Name="numberOfPlayersComboBox" Grid.Column="1" HorizontalAlignment="Left" Margin="196,58,0,0" VerticalAlignment="Top" Width="86" SelectedIndex="0">
+                        <ComboBox x:Name="numberOfPlayersComboBox" Grid.Column="1" HorizontalAlignment="Left" Margin="196,58,0,0" VerticalAlignment="Top" Width="86" SelectedIndex="0" SelectionChanged="numberOfPlayersComboBox_SelectionChanged">
                             <ComboBoxItem>2</ComboBoxItem>
                             <ComboBoxItem>3</ComboBoxItem>
                             <ComboBoxItem>4</ComboBoxItem>
@@ -35,7 +31,12 @@
                     </Grid>
                 </TabItem>
                 <TabItem Header="Computer Player">
-                    <Grid Background="#FFE5E5E5"/>
+                    <Grid Background="#FFE5E5E5">
+                        <Label x:Name="label" Content="Skill Level" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                        <RadioButton x:Name="dumbAIRadioButton" Content="Dumb" HorizontalAlignment="Left" Margin="37,41,0,0" VerticalAlignment="Top" IsChecked="True" Checked="dumbAIRadioButton_Checked"/>
+                        <RadioButton x:Name="goodAIRadioButton" Content="Good" HorizontalAlignment="Left" Margin="37,62,0,0" VerticalAlignment="Top" Checked="goodAIRadioButton_Checked"/>
+                        <RadioButton x:Name="cheatingAIRadioButton" Content="Cheats" HorizontalAlignment="Left" Margin="37,83,0,0" VerticalAlignment="Top" Checked="cheatingAIRadioButton_Checked"/>
+                    </Grid>
                 </TabItem>
             </TabControl>
 
