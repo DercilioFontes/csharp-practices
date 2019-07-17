@@ -18,15 +18,15 @@
             <Label Content="Options" Canvas.Right="10" Canvas.Top="13" Foreground="#FFF7EFEF" FontFamily="Times New Roman" FontSize="24" FontWeight="Bold"/>
         </Canvas>
         <Canvas Grid.Row="1" Background="Black">
+            <Canvas.Resources>
+                <local:NumberOfPlayers x:Key="numberOfPlayersData"/>
+            </Canvas.Resources>
             <TabControl x:Name="tabControl" Grid.RowSpan="2" Canvas.Left="10" Canvas.Top="2" Width="408" Height="208" Grid.Row="1">
                 <TabItem Header="Game">
                     <Grid Background="#FFE5E5E5">
                         <CheckBox x:Name="playAgainstComputerCheck" Content="Play against computer" HorizontalAlignment="Left" Margin="11,33,0,0" VerticalAlignment="Top" Checked="playAgainstComputerCheck_Checked"/>
                         <Label Content="Number of players" Grid.Column="1" HorizontalAlignment="Left" Margin="10,54,0,0" VerticalAlignment="Top"/>
-                        <ComboBox x:Name="numberOfPlayersComboBox" Grid.Column="1" HorizontalAlignment="Left" Margin="196,58,0,0" VerticalAlignment="Top" Width="86" SelectedIndex="0" SelectionChanged="numberOfPlayersComboBox_SelectionChanged">
-                            <ComboBoxItem>2</ComboBoxItem>
-                            <ComboBoxItem>3</ComboBoxItem>
-                            <ComboBoxItem>4</ComboBoxItem>
+                        <ComboBox x:Name="numberOfPlayersComboBox" Grid.Column="1" HorizontalAlignment="Left" Margin="196,58,0,0" VerticalAlignment="Top" Width="86" SelectedIndex="0" IsEnabled="{Binding ElementName=playAgainstComputerCheck, Path=IsChecked}" ItemsSource="{Binding Source={StaticResource numberOfPlayersData}}">
                         </ComboBox>
                     </Grid>
                 </TabItem>

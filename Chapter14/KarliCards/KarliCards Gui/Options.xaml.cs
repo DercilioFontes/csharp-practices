@@ -51,10 +51,5 @@ namespace KarliCards_Gui
             _gameOptions.PlayAgainstComputer = (bool)playAgainstComputerCheck.IsChecked;
         }
 
-        private void numberOfPlayersComboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
-        {
-            //_gameOptions.NumberOfPlayers = Int32.Parse((string)numberOfPlayersComboBox.SelectedItem);
-            _gameOptions.NumberOfPlayers = numberOfPlayersComboBox.SelectedIndex + 2;
-        }
     }
 }
