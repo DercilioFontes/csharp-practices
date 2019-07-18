@@ -28,6 +28,7 @@ namespace KarliCards_Gui
                     _gameOptions = new GameOptions();
                 }
             }
+            DataContext = _gameOptions;
             InitializeComponent();
         }
 
@@ -51,5 +52,20 @@ namespace KarliCards_Gui
             _gameOptions.PlayAgainstComputer = (bool)playAgainstComputerCheck.IsChecked;
         }
 
+        private void okButton_Click(object sender, RoutedEventArgs e)
+        {
+            using (var stream = File.Open("GameOptions.xml", FileMode.Create))
+            {
+                var serializer = new XmlSerializer(typeof(GameOptions));
+                serializer.Serialize(stream, _gameOptions);
+            }
+            Close();
+        }
+
+        private void cancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            _gameOptions = null;
+            Close();
+        }
     }
 }

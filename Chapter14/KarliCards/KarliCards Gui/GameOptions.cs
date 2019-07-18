@@ -1,18 +1,48 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace KarliCards_Gui
 {
     [Serializable]
-    class GameOptions
+    public class GameOptions : INotifyPropertyChanged
     {
-        public bool PlayAgainstComputer { get; set; }
-        public int NumberOfPlayers { get; set; }
-        //public int MinutesBeforeLoss { get; set; }
-        public ComputerSkillLevel ComputerSkill { get; set; }
+        private bool _playAgainstComputer = true;
+        private int _numberOfPlayers = 2;
+        private ComputerSkillLevel _computerSkill = ComputerSkillLevel.Dumb;
+
+        public int NumberOfPlayers
+        {
+            get { return _numberOfPlayers; }
+            set
+            {
+                _numberOfPlayers = value;
+                OnPropertyChanged(nameof(NumberOfPlayers));
+            }
+        }
+        public bool PlayAgainstComputer
+        {
+            get { return _playAgainstComputer; }
+            set
+            {
+                _playAgainstComputer = value;
+                OnPropertyChanged(nameof(PlayAgainstComputer));
+            }
+        }
+        public ComputerSkillLevel ComputerSkill
+        {
+            get { return _computerSkill; }
+            set
+            {
+                _computerSkill = value;
+                OnPropertyChanged(nameof(ComputerSkill));
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 
     [Serializable]
