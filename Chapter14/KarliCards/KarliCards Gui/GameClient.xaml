@@ -10,12 +10,11 @@
         <CommandBinding Command="ApplicationCommands.Close" CanExecute="CommandCanExecute" Executed="CommandExecuted" />
         <CommandBinding Command="ApplicationCommands.Save" CanExecute="CommandCanExecute" Executed="CommandExecuted" />
     </Window.CommandBindings>
-   <Grid>
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="58"/>
             <RowDefinition Height="20"/>
-            <RowDefinition Background="Green"/>
-            <RowDefinition Height="42"/>
+            <RowDefinition />
         </Grid.RowDefinitions>
         <Canvas Grid.Row="0" Background="#C40D42">
             <Image Height="56" Canvas.Left="0" Canvas.Top="0" Stretch="UniformToFill" Source=".\Images\Banner.png"/>
@@ -27,9 +26,9 @@
                     <MenuItem Header="_New Game..." Height="22" Width="200" Foreground="Black" />
                     <MenuItem Header="_Open" Width="200" Foreground="Black" />
                     <MenuItem Header="_Save" Width="200" Foreground="Black" Command="Save">
-                        <Menu.Icon>
+                        <MenuItem.Icon>
                             <Image Source="Images\base_floppydisk_32.png" Width="20" />
-                        </Menu.Icon>
+                        </MenuItem.Icon>
                     </MenuItem>
                     <Separator Width="145" Foreground="Black" />
                     <MenuItem Header="_Close" Width="200" Foreground="Black" Command="Close"/>
@@ -45,6 +44,8 @@
                 </MenuItem>
             </Menu>
         </DockPanel>
-       <Grid Grid.Row="2" x:Name="contentGrid" />
+        <Grid Grid.Row="2" x:Name="contentGrid" Background="Green" >
+            
+        </Grid>
     </Grid>
 </Window>
