@@ -53,9 +53,29 @@ namespace KarliCards_Gui
             get { return (Ch13CardLib.Rank)GetValue(RankProperty); }
             set { SetValue(RankProperty, value); }
         }
+
+        private Ch13CardLib.Card _card;
+        public Ch13CardLib.Card Card
+        {
+            get { return _card; }
+            private set { _card = value; Suit = _card.suit;  Rank = _card.rank; }
+        }
+
         public CardControl()
         {
             InitializeComponent();
+        }
+
+        public static void OnSuitChanged(DependencyObject source, DependencyPropertyChangedEventArgs args)
+        {
+            var control = source as CardControl;
+            control.SetTextColor();
+        }
+
+        private static void OnIsFaceUpChanged(DependencyObject source, DependencyPropertyChangedEventArgs args)
+        {
+            var control = source as CardControl;
+            control.RankLabel.Visibility = control.SuitLabel.Visibility = control.RankLabelInverted.Visibility = control.TopRightImage.Visibility = control.BottomLeftImage.Visibility = control.IsFaceUp ? Visibility.Visible : Visibility.Hidden;
         }
     }
 }
