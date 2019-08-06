@@ -20,6 +20,39 @@ namespace KarliCards_Gui
     /// </summary>
     public partial class CardControl : UserControl
     {
+        public static DependencyProperty SuitProperty = DependencyProperty.Register(
+            "Suit",
+            typeof(Ch13CardLib.Suit),
+            typeof(CardControl),
+            new PropertyMetadata(Ch13CardLib.Suit.Club,
+                new PropertyChangedCallback(OnSuitChanged)));
+        public static DependencyProperty RankProperty = DependencyProperty.Register(
+            "Rank",
+            typeof(Ch13CardLib.Rank),
+            typeof(CardControl),
+            new PropertyMetadata(Ch13CardLib.Rank.Ace));
+        public static DependencyProperty IsFaceUpProperty = DependencyProperty.Register(
+            "IsFaceUp",
+            typeof(bool),
+            typeof(CardControl),
+            new PropertyMetadata(true, new PropertyChangedCallback(OnIsFaceUpChanged)));
+
+        public bool IsFaceUp
+        {
+            get { return (bool)GetValue(IsFaceUpProperty); }
+            set { SetValue(IsFaceUpProperty, value); }
+        }
+        public Ch13CardLib.Suit Suit
+        {
+            get { return (Ch13CardLib.Suit)GetValue(SuitProperty); }
+            set { SetValue(SuitProperty, value); }
+        }
+
+        public Ch13CardLib.Rank Rank
+        {
+            get { return (Ch13CardLib.Rank)GetValue(RankProperty); }
+            set { SetValue(RankProperty, value); }
+        }
         public CardControl()
         {
             InitializeComponent();
