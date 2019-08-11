@@ -240,3 +240,7 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+
+# My files
+Chapter16/Ch16Ex01/configAndSecrets.cs
+Chapter16/Ch16Ex01/App.config
