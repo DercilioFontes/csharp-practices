@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace KarliCards_Gui
 {
@@ -58,12 +47,18 @@ namespace KarliCards_Gui
         public Ch13CardLib.Card Card
         {
             get { return _card; }
-            private set { _card = value; Suit = _card.suit;  Rank = _card.rank; }
+            private set { _card = value; Suit = _card.suit; Rank = _card.rank; }
         }
 
-        public CardControl()
+        public CardControl(Ch13CardLib.Card card)
         {
             InitializeComponent();
+            Card = card;
+        }
+
+        private void SetTextColor()
+        {
+            var color = (Suit == Ch13CardLib.Suit.Club || Suit == Ch13CardLib.Suit.Spade) ? new SolidColorBrush(Color.FromRgb(0, 0, 0)) : new SolidColorBrush(Color.FromRgb(255, 0, 0));
         }
 
         public static void OnSuitChanged(DependencyObject source, DependencyPropertyChangedEventArgs args)
