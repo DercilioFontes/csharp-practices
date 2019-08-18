@@ -14,7 +14,11 @@ namespace Ch16Ex01
             try
             {
                 // creates the container
-                CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting("StorageConnectionString"));
+                //CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting("StorageConnectionString"));
+                CloudStorageAccount storageAccount = CloudStorageAccount.Parse("DefaultEndpointsProtocol=https;" +
+                                    "AccountName=dafdevcards;" +
+                                    "AccountKey=zvNYwPtqQXV7XqgclR8H3yjJz0S0SWVTJIgCzR9fBbMorDyJPAN5j7CovyD0iJvnm/2F+C+uVr3QxwHFumky4A==;" +
+                                    "EndpointSuffix=core.windows.net");
                 CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
                 CloudBlobContainer container = blobClient.GetContainerReference("carddeck");
 
