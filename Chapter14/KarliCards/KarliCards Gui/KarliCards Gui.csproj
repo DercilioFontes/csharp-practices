@@ -59,6 +59,7 @@
       <DependentUpon>CardControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="InverseBoolConverter.cs" />
+    <Compile Include="RankNameConverter.cs" />
     <Compile Include="StartGame.xaml.cs">
       <DependentUpon>StartGame.xaml</DependentUpon>
     </Compile>

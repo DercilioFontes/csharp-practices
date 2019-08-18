@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ch13CardLib;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -75,11 +76,4 @@ namespace KarliCards_Gui
 
     }
 
-    [Serializable]
-    public enum ComputerSkillLevel
-    {
-        Dumb,
-        Good,
-        Cheats
-    }
 }
