@@ -15,7 +15,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+
+#line 1 "default.cshtml"
 using System.Web.WebPages;
+
+#line default
+#line hidden
 
 
 [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorTemplatePreprocessor", "2.6.0.0")]
@@ -26,8 +31,10 @@ public partial class @default : defaultBase
 
 public override void Execute()
 {
+WriteLiteral("\n");
 
-#line 1 "default.cshtml"
+
+#line 3 "default.cshtml"
   
     Player[] players = new Player[2];
     var player1 = HelperPage.Request.Form["PlayerName1"];
@@ -73,13 +80,13 @@ WriteLiteral(@" />
 ");
 
 
-#line 36 "default.cshtml"
+#line 38 "default.cshtml"
         
 
 #line default
 #line hidden
 
-#line 36 "default.cshtml"
+#line 38 "default.cshtml"
          if(HelperPage.IsPost){
 
 
@@ -100,7 +107,7 @@ WriteLiteral(" id=\"labelPlayer1\"");
 WriteLiteral(">Player1: ");
 
 
-#line 40 "default.cshtml"
+#line 42 "default.cshtml"
                                                 Write(player1);
 
 
@@ -109,13 +116,13 @@ WriteLiteral(">Player1: ");
 WriteLiteral("</label></p>\n");
 
 
-#line 41 "default.cshtml"
+#line 43 "default.cshtml"
                 
 
 #line default
 #line hidden
 
-#line 41 "default.cshtml"
+#line 43 "default.cshtml"
                  foreach(Card card in players[0].PlayHand)
                 {
 
@@ -133,7 +140,7 @@ WriteLiteral(" alt=\"cardImage\"");
 WriteAttribute ("src", " src=\"", "\""
 , Tuple.Create<string,object,bool> ("", "https://dafdevcards.blob.core.windows.net/carddeck/", true)
 
-#line 43 "default.cshtml"
+#line 45 "default.cshtml"
                                                                                       , Tuple.Create<string,object,bool> ("", card.imageLink
 
 #line default
@@ -143,7 +150,7 @@ WriteAttribute ("src", " src=\"", "\""
 WriteLiteral("/>\n");
 
 
-#line 44 "default.cshtml"
+#line 46 "default.cshtml"
                 }
 
 
@@ -158,7 +165,7 @@ WriteLiteral(" id=\"labelPlayer2\"");
 WriteLiteral(">Player2: ");
 
 
-#line 47 "default.cshtml"
+#line 49 "default.cshtml"
                                                 Write(player2);
 
 
@@ -167,13 +174,13 @@ WriteLiteral(">Player2: ");
 WriteLiteral("</label></p>\r\n");
 
 
-#line 48 "default.cshtml"
+#line 50 "default.cshtml"
                 
 
 #line default
 #line hidden
 
-#line 48 "default.cshtml"
+#line 50 "default.cshtml"
                  foreach (Card card in players[1].PlayHand)
                 {
 
@@ -191,7 +198,7 @@ WriteLiteral(" alt=\"cardImage\"");
 WriteAttribute ("src", " src=\"", "\""
 , Tuple.Create<string,object,bool> ("", "https://dafdevcards.blob.core.windows.net/carddeck/", true)
 
-#line 50 "default.cshtml"
+#line 52 "default.cshtml"
                                                                                       , Tuple.Create<string,object,bool> ("", card.imageLink
 
 #line default
@@ -201,7 +208,7 @@ WriteAttribute ("src", " src=\"", "\""
 WriteLiteral(" />\r\n");
 
 
-#line 51 "default.cshtml"
+#line 53 "default.cshtml"
                 }
 
 
@@ -210,7 +217,7 @@ WriteLiteral(" />\r\n");
 WriteLiteral("            </div>\n");
 
 
-#line 53 "default.cshtml"
+#line 55 "default.cshtml"
         }
         else {
 
@@ -234,7 +241,7 @@ WriteLiteral(" method=\"post\"");
 WriteLiteral(">\n                <div>\r\n                    <p>Player 1: ");
 
 
-#line 59 "default.cshtml"
+#line 61 "default.cshtml"
                             Write(HelperPage.Html.TextBox("PlayerName1"));
 
 
@@ -243,7 +250,7 @@ WriteLiteral(">\n                <div>\r\n                    <p>Player 1: ");
 WriteLiteral("</p>\r\n                    <p>Player 2: ");
 
 
-#line 60 "default.cshtml"
+#line 62 "default.cshtml"
                             Write(HelperPage.Html.TextBox("PlayerName2"));
 
 
@@ -260,7 +267,7 @@ WriteLiteral(" class=\"submit\"");
 WriteLiteral("/></p>\r\n                </div>\n            </form>\n");
 
 
-#line 64 "default.cshtml"
+#line 66 "default.cshtml"
         }
 
 
