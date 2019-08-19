@@ -2,7 +2,7 @@
 
 namespace Ch13CardLib
 {
-    class CardEventArgs : EventArgs
+    public class CardEventArgs : EventArgs
     {
         public Card Card { get; set; }
     }

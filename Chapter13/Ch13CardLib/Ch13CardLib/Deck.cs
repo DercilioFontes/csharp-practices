@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Ch13CardLib
 {
@@ -12,13 +14,6 @@ namespace Ch13CardLib
         public Deck()
         {
             InsertAllCards();
-            //for (int suitVal = 0; suitVal < 4; suitVal++)
-            //{
-            //    for (int rankVal = 1; rankVal < 14; rankVal++)
-            //    {
-            //        cards.Add(new Card((Suit)suitVal, (Rank)rankVal));
-            //    }
-            //}
         }
         protected Deck(Cards newCards)
         {
@@ -28,40 +23,6 @@ namespace Ch13CardLib
         {
             get { return cards.Count; }
         }
-
-        ///// <summary>
-        ///// Nondefault constructor. Allows aces to be set high.
-        ///// </summary>
-        ///// <param name="isAceHigh">If set to <c>true</c> is ace high.</param>
-        //public Deck(bool isAceHigh) : this()
-        //{
-        //    Card.isAceHigh = isAceHigh;
-        //}
-
-        ///// <summary>
-        ///// Nondefault constructor. Allows a trump suit to be used.
-        ///// </summary>
-        ///// <param name="useTrumps">If set to <c>true</c> use trumps.</param>
-        ///// <param name="trump">Trump.</param>
-        //public Deck(bool useTrumps, Suit trump) : this()
-        //{
-        //    Card.useTrumps = useTrumps;
-        //    Card.trump = trump;
-        //}
-
-        ///// <summary>
-        ///// Nondefault constructor. Allows aces to be set high and a trump suit
-        ///// to be used.
-        ///// </summary>
-        ///// <param name="isAceHigh">If set to <c>true</c> is ace high.</param>
-        ///// <param name="useTrumps">If set to <c>true</c> use trumps.</param>
-        ///// <param name="trump">Trump.</param>
-        //public Deck(bool isAceHigh, bool useTrumps, Suit trump) : this()
-        //{
-        //    Card.isAceHigh = isAceHigh;
-        //    Card.useTrumps = useTrumps;
-        //    Card.trump = trump;
-        //}
 
         public Card GetCard(int cardNum)
         {
@@ -78,15 +39,15 @@ namespace Ch13CardLib
         public void Shuffle()
         {
             Cards newDeck = new Cards();
-            bool[] assigned = new bool[52];
+            bool[] assigned = new bool[cards.Count];
             Random sourceGen = new Random();
-            for (int i = 0; i < 52; i++)
+            for (int i = 0; i < cards.Count; i++)
             {
                 int sourceCard = 0;
                 bool foundCard = false;
                 while (foundCard == false)
                 {
-                    sourceCard = sourceGen.Next(52);
+                    sourceCard = sourceGen.Next(cards.Count);
                     if (assigned[sourceCard] == false)
                         foundCard = true;
                 }
@@ -96,15 +57,57 @@ namespace Ch13CardLib
             newDeck.CopyTo(cards);
         }
 
-        private Deck(Cards newCards)
+        public void ReshuffleDiscarded(List<Card> cardsInPlay)
         {
-            cards = newCards;
+            InsertAllCards(cardsInPlay);
+            Shuffle();
+        }
+
+        public Card Draw()
+        {
+            if (cards.Count == 0) return null;
+            var card = cards[0];
+            cards.RemoveAt(0);
+            return card;
+        }
+
+        public Card SelectCardOfSpecificSuit(Suit suit)
+        {
+            Card selectedCard = cards.FirstOrDefault(card => card?.suit == suit);
+            if (selectedCard == null) return Draw();
+            cards.Remove(selectedCard);
+            return selectedCard;
         }
 
         public object Clone()
         {
             Deck newDeck = new Deck(cards.Clone() as Cards);
             return newDeck;
+        }
+
+        private void InsertAllCards()
+        {
+            for(int suitVal = 0; suitVal < 4; suitVal++)
+            {
+                for(int rankVal = 1; rankVal < 14; rankVal++)
+                {
+                    cards.Add(new Card((Suit)suitVal, (Rank)rankVal));
+                }
+            }
+        }
+
+        private void InsertAllCards(List<Card> except)
+        {
+            for(int suitVal = 0; suitVal < 4; suitVal++)
+            {
+                for(int rankVal = 1; rankVal < 14; rankVal++)
+                {
+                    var card = new Card((Suit)suitVal, (Rank)rankVal);
+                    if ((bool)except?.Contains(card))
+                        continue;
+                    cards.Add(card);
+                }
+            }
         }
     }
 }

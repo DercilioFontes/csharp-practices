@@ -44,8 +44,10 @@
     <Compile Include="CardEventArgs.cs" />
     <Compile Include="CardOutOfRangeException.cs" />
     <Compile Include="Cards.cs" />
+    <Compile Include="ComputerPlayer.cs" />
     <Compile Include="ComputerSkillLevel.cs" />
     <Compile Include="Deck.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="PlayerEventArgs.cs" />
     <Compile Include="PlayerState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
