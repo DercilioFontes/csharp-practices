@@ -3,6 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Windows.Input;
+using System.IO;
+using System.Xml.Serialization;
 
 namespace KarliCards_Gui
 {
@@ -14,6 +17,7 @@ namespace KarliCards_Gui
         private bool _playAgainstComputer = true;
         private int _numberOfPlayers = 2;
         private ComputerSkillLevel _computerSkill = ComputerSkillLevel.Dumb;
+        public static RoutedCommand OptionsCommand = new RoutedCommand("Show Options", typeof(GameOptions), new InputGestureCollection(new List<InputGesture> { new KeyGesture(Key.O, ModifierKeys.Control) }));
         public int NumberOfPlayers
         {
             get { return _numberOfPlayers; }
@@ -72,6 +76,29 @@ namespace KarliCards_Gui
                 return;
             _playerNames.Add(playerName);
             OnPropertyChanged("PlayerNames");
+        }
+
+        public void Save()
+        {
+            using(var stream = File.Open("GameOptions.xml", FileMode.Create))
+            {
+                var serializer = new XmlSerializer(typeof(GameOptions));
+                serializer.Serialize(stream, this);
+            }
+        }
+
+        public static GameOptions Create()
+        {
+            if (File.Exists("GameOptions.xml"))
+            {
+                using (var stream = File.OpenRead("GameOptions.xml"))
+                {
+                    var serializer = new XmlSerializer(typeof(GameOptions));
+                    return serializer.Deserialize(stream) as GameOptions;
+                }
+            }
+            else
+                return new GameOptions();
         }
 
     }

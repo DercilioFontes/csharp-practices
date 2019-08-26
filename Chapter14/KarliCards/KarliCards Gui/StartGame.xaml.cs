@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Xml.Serialization;
@@ -14,27 +15,22 @@ namespace KarliCards_Gui
 
         public StartGame()
         {
-            if (_gameOptions == null)
-            {
-                if (File.Exists("GameOptions.xml"))
-                {
-                    using (var stream = File.OpenRead("GameOptions.xml"))
-                    {
-                        var serializer = new XmlSerializer(typeof(GameOptions));
-                        _gameOptions = serializer.Deserialize(stream) as GameOptions;
-                    }
-                }
-                else
-                {
-                    _gameOptions = new GameOptions();
-                }
-            }
-            DataContext = _gameOptions;
             InitializeComponent();
+            DataContextChanged += StartGame_DataContextChanged;
+        }
+
+        private void ChangeListBoxOptions()
+        {
             if (_gameOptions.PlayAgainstComputer)
                 playerNamesListBox.SelectionMode = SelectionMode.Single;
             else
                 playerNamesListBox.SelectionMode = SelectionMode.Extended;
+        }
+
+        void StartGame_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            _gameOptions = DataContext as GameOptions;
+            ChangeListBoxOptions();
         }
 
         private void playerNamesListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -54,13 +50,11 @@ namespace KarliCards_Gui
 
         private void okButton_Click(object sender, RoutedEventArgs e)
         {
+            var gameOptions = DataContext as GameOptions;
+            gameOptions.SelectedPlayers = new List<string>();
             foreach (string item in playerNamesListBox.SelectedItems)
-                _gameOptions.SelectedPlayers.Add(item);
-            using (var stream = File.Open("GameOptions.xml", FileMode.Create))
-            {
-                var serializer = new XmlSerializer(typeof(GameOptions));
-                serializer.Serialize(stream, _gameOptions);
-            }
+                gameOptions.SelectedPlayers.Add(item);
+            DialogResult = true;
             Close();
         }
 

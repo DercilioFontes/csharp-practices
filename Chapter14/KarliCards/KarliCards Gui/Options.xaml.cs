@@ -13,21 +13,7 @@ namespace KarliCards_Gui
         private GameOptions _gameOptions;
         public Options()
         {
-            if(_gameOptions == null)
-            {
-                if (File.Exists("GameOptions.xml"))
-                {
-                    using (var stream = File.OpenRead("GameOptions.xml"))
-                    {
-                        var serializer = new XmlSerializer(typeof(GameOptions));
-                        _gameOptions = serializer.Deserialize(stream) as GameOptions;
-                    }
-                }
-                else
-                {
-                    _gameOptions = new GameOptions();
-                }
-            }
+            _gameOptions = GameOptions.Create();
             DataContext = _gameOptions;
             InitializeComponent();
         }
@@ -54,11 +40,8 @@ namespace KarliCards_Gui
 
         private void okButton_Click(object sender, RoutedEventArgs e)
         {
-            using (var stream = File.Open("GameOptions.xml", FileMode.Create))
-            {
-                var serializer = new XmlSerializer(typeof(GameOptions));
-                serializer.Serialize(stream, _gameOptions);
-            }
+            DialogResult = true;
+            _gameOptions.Save();
             Close();
         }
 
