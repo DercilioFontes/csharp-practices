@@ -4,11 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:src="clr-namespace:KarliCards_Gui"
+        xmlns:vm="clr-namespace:KarliCards_Gui.ViewModel"
         mc:Ignorable="d"
         Title="Karli Cards Game Client" WindowState="Maximized">
+    <Window.DataContext>
+        <local:GameViewModel />
+    </Window.DataContext>
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.Close" CanExecute="CommandCanExecute" Executed="CommandExecuted" />
         <CommandBinding Command="ApplicationCommands.Save" CanExecute="CommandCanExecute" Executed="CommandExecuted" />
+        <CommandBinding Command="local:GameViewModel.StartGameCommand" CanExecute="CommandCanExecute" Executed="CommandExecuted" />
+        <CommandBinding Command="local:GameViewModel.ShowAboutCommand" CanExecute="CommandCanExecute" Executed="CommandExecuted" />
+        <CommandBinding Command="local:GameViewModel.OptionsCommand" CanExecute="CommandCanExecute" Executed="CommandExecuted" />
     </Window.CommandBindings>
     <Grid>
         <Grid.RowDefinitions>
