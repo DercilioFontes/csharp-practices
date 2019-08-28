@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows.Input;
 
-namespace KarliCards_Gui
+namespace KarliCards_Gui.ViewModel
 {
     public class GameViewModel : INotifyPropertyChanged
     {

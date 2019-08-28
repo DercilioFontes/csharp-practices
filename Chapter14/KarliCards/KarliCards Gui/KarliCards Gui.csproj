@@ -58,7 +58,7 @@
     <Compile Include="CardControl.xaml.cs">
       <DependentUpon>CardControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GameViewModel.cs" />
+    <Compile Include="ViewModel\GameViewModel.cs" />
     <Compile Include="InverseBoolConverter.cs" />
     <Compile Include="RankNameConverter.cs" />
     <Compile Include="StartGame.xaml.cs">
@@ -150,6 +150,7 @@
     <Resource Include="Images\Hearts.png" />
     <Resource Include="Images\Spades.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
