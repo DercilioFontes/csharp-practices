@@ -3,10 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:src="clr-namespace:KarliCards_Gui"
-        xmlns:vm="clr-namespace:KarliCards_Gui.ViewModel"
-        xmlns:local="clr-namespace:KarliCards_Gui"
         mc:Ignorable="d"
+        xmlns:src="clr-namespace:KarliCards_Gui"
+        xmlns:local="clr-namespace:KarliCards_Gui"
+        xmlns:vm="clr-namespace:KarliCards_Gui.ViewModel"
         Title="Karli Cards Game Client" WindowState="Maximized">
     <Window.DataContext>
         <vm:GameViewModel />
@@ -31,7 +31,7 @@
         <DockPanel Grid.Row="1" Margin="0">
             <Menu Background="Black" FontWeight="Bold" Foreground="White">
                 <MenuItem Header="_File" Foreground="White">
-                    <MenuItem Header="_New Game..." Height="22" Width="200" Foreground="Black" />
+                    <MenuItem Header="_New Game..." Height="22" Width="200" Foreground="Black" Command="vm:GameViewModel.StartGameCommand" />
                     <MenuItem Header="_Open" Width="200" Foreground="Black" />
                     <MenuItem Header="_Save" Width="200" Foreground="Black" Command="Save">
                         <MenuItem.Icon>
@@ -45,10 +45,10 @@
                     <MenuItem Header="_Undo" HorizontalAlignment="Left" Width="145" Foreground="Black" />
                 </MenuItem>
                 <MenuItem Header="_Tools" Background="Black" Foreground="White">
-                    <MenuItem Header="_Options" HorizontalAlignment="Left" Width="145" Foreground="Black" />
+                    <MenuItem Header="_Options" HorizontalAlignment="Left" Width="200" Foreground="Black" Command="local:GameOptions.OptionsCommand"/>
                 </MenuItem>
                 <MenuItem Header="Help" Background="Black" Foreground="White">
-                    <MenuItem Header="_About" HorizontalAlignment="Left" Width="145" Foreground="Black" />
+                    <MenuItem Header="_About" HorizontalAlignment="Left" Width="145" Foreground="Black" Command="vm:GameViewModel.ShowAboutCommand"/>
                 </MenuItem>
             </Menu>
         </DockPanel>
