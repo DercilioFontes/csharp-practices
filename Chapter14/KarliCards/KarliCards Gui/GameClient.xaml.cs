@@ -51,7 +51,7 @@ namespace KarliCards_Gui
                 var dialog = new Options();
                 var result = dialog.ShowDialog();
                 if (result.HasValue && result.Value == true)
-                    DataContext = new GameViewModel();
+                    DataContext = new GameViewModel(); // Clear current game
             }
             if(e.Command == GameViewModel.ShowAboutCommand)
             {

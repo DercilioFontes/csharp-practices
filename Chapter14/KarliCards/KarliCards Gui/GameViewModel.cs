@@ -9,8 +9,16 @@ namespace KarliCards_Gui
     public class GameViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public GameViewModel()
+        {
+            _players = new List<Player>();
+            _gameOptions = GameOptions.Create();
+        }
+
         private void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
+        private GameOptions _gameOptions;
         private Player _currentPlayer;
         public Player CurrentPlayer
         {
@@ -29,6 +37,7 @@ namespace KarliCards_Gui
             set
             {
                 _players = value;
+                OnPropertyChanged(nameof(Players));
             }
         }
 
@@ -39,6 +48,7 @@ namespace KarliCards_Gui
             set
             {
                 _availableCard = value;
+                OnPropertyChanged(nameof(CurrentAvailableCard));
             }
         }
 
@@ -49,6 +59,7 @@ namespace KarliCards_Gui
             set
             {
                 _deck = value;
+                OnPropertyChanged(nameof(GameDeck));
             }
         }
 
@@ -59,19 +70,12 @@ namespace KarliCards_Gui
             set
             {
                 _gameStarted = value;
+                OnPropertyChanged(nameof(GameStarted));
             }
         }
 
-        private GameOptions _gameOptions;
-
         public static RoutedCommand StartGameCommand = new RoutedCommand("Start New Game", typeof(GameViewModel), new InputGestureCollection(new List<InputGesture> { new KeyGesture(Key.N, ModifierKeys.Control) }));
         public static RoutedCommand ShowAboutCommand = new RoutedCommand("Show About Dialog", typeof(GameViewModel));
-
-        public GameViewModel()
-        {
-            _players = new List<Player>();
-            _gameOptions = GameOptions.Create();
-        }
 
         public void StartNewGame()
         {

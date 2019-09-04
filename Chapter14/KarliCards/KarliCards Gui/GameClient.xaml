@@ -16,11 +16,12 @@
         <CommandBinding Command="local:GameViewModel.ShowAboutCommand" CanExecute="CommandCanExecute" Executed="CommandExecuted" />
         <CommandBinding Command="local:GameOptions.OptionsCommand" CanExecute="CommandCanExecute" Executed="CommandExecuted" />
     </Window.CommandBindings>
-    <Grid>
+    <Grid Background="Green">
         <Grid.RowDefinitions>
             <RowDefinition Height="58"/>
             <RowDefinition Height="20"/>
             <RowDefinition />
+            <RowDefinition Height="42"/>
         </Grid.RowDefinitions>
         <Canvas Grid.Row="0" Background="#C40D42">
             <Image Height="56" Canvas.Left="0" Canvas.Top="0" Stretch="UniformToFill" Source=".\Images\Banner.png"/>
@@ -28,9 +29,9 @@
         </Canvas>
         <DockPanel Grid.Row="1" Margin="0">
             <Menu Background="Black" FontWeight="Bold" Foreground="White">
-                <MenuItem Header="_File" Foreground="White">
-                    <MenuItem Header="_New Game..." Height="22" Width="200" Foreground="Black" Command="local:GameViewModel.StartGameCommand" />
-                    <MenuItem Header="_Open" Width="200" Foreground="Black" />
+                <MenuItem Header="_File">
+                    <MenuItem Header="_New Game..." Width="200" Foreground="Black" Command="local:GameViewModel.StartGameCommand" />
+                    <MenuItem Header="_Open" Width="200" Foreground="Black"/>
                     <MenuItem Header="_Save" Width="200" Foreground="Black" Command="Save">
                         <MenuItem.Icon>
                             <Image Source="Images\base_floppydisk_32.png" Width="20" />
