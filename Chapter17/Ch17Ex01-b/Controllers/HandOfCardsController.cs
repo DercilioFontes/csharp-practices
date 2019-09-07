@@ -12,6 +12,7 @@ namespace Ch17Ex01b.Controllers
     public class HandOfCardsController : Controller
     {
         // GET: api/handofcards/{playerName}
+        // Exampple call: https://ch17ex01-b.azurewebsites.net/api/handofcards/Dercilio
         [HttpGet("{playerName}")]
         public IEnumerable<Card> GetHandOfCards(string playerName)
         {
