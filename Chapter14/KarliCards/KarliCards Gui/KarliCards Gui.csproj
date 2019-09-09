@@ -61,6 +61,9 @@
     <Compile Include="CardsInHandControl.xaml.cs">
       <DependentUpon>CardsInHandControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GameDecksControl.xaml.cs">
+      <DependentUpon>GameDecksControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GameViewModel.cs" />
     <Compile Include="InverseBoolConverter.cs" />
     <Compile Include="RankNameConverter.cs" />
@@ -76,6 +79,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CardsInHandControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GameDecksControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
