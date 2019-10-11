@@ -11,8 +11,8 @@
             <Label.Effect>
                 <DropShadowEffect ShadowDepth="5" Opacity="0.5" Direction="145"/>
             </Label.Effect>
-            <Canvas Name="CardSurface">
-            </Canvas>
         </Label>
+        <Canvas Name="CardSurface">
+        </Canvas>
     </Grid>
 </UserControl>

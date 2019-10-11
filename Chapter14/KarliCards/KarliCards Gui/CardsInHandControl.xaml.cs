@@ -20,6 +20,7 @@ namespace KarliCards_Gui
             public Card AvailableCard { get; set; }
             public ComputerPlayer Player { get; set; }
         }
+
         public CardsInHandControl()
         {
             InitializeComponent();
@@ -28,7 +29,7 @@ namespace KarliCards_Gui
         public Player Owner
         {
             get { return (Player)GetValue(OwnerProperty); }
-            set { SetValue(OwnerProperty, null); }
+            set { SetValue(OwnerProperty, value); }
         }
 
         // Using a DependencyProperty as the backing store for Owner.  This enables animation, styling, binding, etc...
@@ -49,7 +50,7 @@ namespace KarliCards_Gui
 
         // Using a DependencyProperty as the backing store for Game.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty GameProperty =
-            DependencyProperty.Register("Game", typeof(GameViewModel), typeof(CardsInHandControl), new PropertyMetadata(null));
+            DependencyProperty.Register("Game", typeof(GameViewModel), typeof(CardsInHandControl), null);
 
         public PlayerState PlayerState
         {
