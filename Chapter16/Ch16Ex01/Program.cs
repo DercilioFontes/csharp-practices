@@ -1,7 +1,9 @@
 ﻿using System;
 using System.IO;
 using Microsoft.Azure;
+using Microsoft.WindowsAzure;
 using Microsoft.WindowsAzure.Storage;
+// using Microsoft.WindowsAzure.Auth;
 using Microsoft.WindowsAzure.Storage.Blob;
 using static System.Console;
 
@@ -14,7 +16,7 @@ namespace Ch16Ex01
             try
             {
                 // creates the container
-                //CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting("StorageConnectionString"));
+                CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting("StorageConnectionString"));
                 CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
                 CloudBlobContainer container = blobClient.GetContainerReference("carddeck");
 
@@ -24,7 +26,7 @@ namespace Ch16Ex01
                 }
                 else
                 {
-                    WriteLine($"Container '{container.Name}' alreary exists for storage account '{storageAccount.Credentials.AccountName}'.");
+                    WriteLine($"Container '{container.Name}' already exists for storage account '{storageAccount.Credentials.AccountName}'.");
                 }
 
                 container.SetPermissions(new BlobContainerPermissions { PublicAccess = BlobContainerPublicAccessType.Blob });
