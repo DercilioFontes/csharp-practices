@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamRead", "StreamRead\StreamRead.csproj", "{BC52E88F-4110-43A7-8782-62AF08AD3AF5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC52E88F-4110-43A7-8782-62AF08AD3AF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC52E88F-4110-43A7-8782-62AF08AD3AF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC52E88F-4110-43A7-8782-62AF08AD3AF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC52E88F-4110-43A7-8782-62AF08AD3AF5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CF34D76E-B66B-46E0-9232-CCEE20F22F94}
+	EndGlobalSection
+EndGlobal
