@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LookThroughXmlDocument"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="XML Nodes" Height="450" Width="800">
     <Grid>
-        
+        <TextBlock x:Name="textBlockResults" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="399" Width="650"/>
+        <Button x:Name="buttonLoop" Content="Loop" HorizontalAlignment="Left" Margin="691,19,0,0" VerticalAlignment="Top" Width="75" Click="buttonLoop_Click"/>
+
     </Grid>
 </Window>
