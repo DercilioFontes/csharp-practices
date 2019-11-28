@@ -1,17 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Xml;
 
 namespace LookThroughXmlDocument
@@ -29,6 +17,7 @@ namespace LookThroughXmlDocument
 
         private void buttonLoop_Click(object sender, RoutedEventArgs e)
         {
+            textBlockResults.Text = string.Empty;
             XmlDocument document = new XmlDocument();
             document.Load(ghostStories);
             textBlockResults.Text = FormatText(document.DocumentElement as XmlNode, "", "");
@@ -95,6 +84,46 @@ namespace LookThroughXmlDocument
             {
                 text += " " + xa.Name + "= " + xa.Value + "'";
             }
+        }
+
+        private void buttonCreateNode_Click(object sender, RoutedEventArgs e)
+        {
+            // Load the XML document.
+            XmlDocument document = new XmlDocument();
+            document.Load(ghostStories);
+
+            // Get the root element
+            XmlElement root = document.DocumentElement;
+
+            // Create the new nodes.
+            XmlElement newStory = document.CreateElement("story");
+            XmlElement newTitle = document.CreateElement("title");
+            XmlElement newAuthor = document.CreateElement("author");
+            XmlElement newAuthorName = document.CreateElement("name");
+            XmlElement newAuthorNationality = document.CreateElement("nationality");
+            XmlElement newRating = document.CreateElement("rating");
+
+            XmlText title = document.CreateTextNode("The Haunting of Hill House");
+            XmlText name = document.CreateTextNode("Shirley Jackson");
+            XmlText nationality = document.CreateTextNode("American");
+            XmlText rating = document.CreateTextNode("gothic horror");
+
+            XmlComment comment = document.CreateComment("3.8/5 · Goodreads");
+
+            // Insert the elements
+            newStory.AppendChild(comment);
+            newStory.AppendChild(newTitle);
+            newTitle.AppendChild(title);
+            newStory.AppendChild(newAuthor);
+            newAuthor.AppendChild(newAuthorName);
+            newAuthorName.AppendChild(name);
+            newAuthor.AppendChild(newAuthorNationality);
+            newAuthorNationality.AppendChild(nationality);
+            newStory.AppendChild(newRating);
+            newRating.AppendChild(rating);
+            root.InsertAfter(newStory, root.LastChild);
+            document.Save(ghostStories);
+
         }
     }
 }
