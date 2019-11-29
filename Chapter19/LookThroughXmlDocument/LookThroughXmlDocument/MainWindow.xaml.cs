@@ -10,6 +10,7 @@ namespace LookThroughXmlDocument
     public partial class MainWindow : Window
     {
         private const string ghostStories = @"C:\Users\dfontes\Documents\training-projects\beginnigCsharp\csharp-practices\Chapter19\XML and Schemas\GhostStories.xml";
+        private const string elements = @"C:\Users\dfontes\Documents\training-projects\beginnigCsharp\csharp-practices\Chapter19\XML and Schemas\Elements.xml";
         public MainWindow()
         {
             InitializeComponent();
@@ -124,6 +125,38 @@ namespace LookThroughXmlDocument
             root.InsertAfter(newStory, root.LastChild);
             document.Save(ghostStories);
 
+        }
+
+        private void buttonDeleteNode_Click(object sender, RoutedEventArgs e)
+        {
+            // Load the XML document
+            XmlDocument document = new XmlDocument();
+            document.Load(ghostStories);
+
+            // Get the root element
+            XmlElement root = document.DocumentElement;
+
+            // Find the node. root is the <stories> tag, so its last child 
+            if (root.HasChildNodes)
+            {
+                XmlNode story = root.LastChild;
+
+                // Delete the child
+                root.RemoveChild(story);
+
+                // Save the document back to disk
+                document.Save(ghostStories);
+            }
+        }
+
+        private void buttonXMLtoJSON_Click(object sender, RoutedEventArgs e)
+        {
+            // Load the XML document
+            XmlDocument document = new XmlDocument();
+            document.Load(ghostStories);
+
+            string json = Newtonsoft.Json.JsonConvert.SerializeXmlNode(document);
+            textBlockResults.Text = json;
         }
     }
 }

@@ -10,8 +10,10 @@
         <ScrollViewer Margin="0,0,106,0">
             <TextBlock x:Name="textBlockResults" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
         </ScrollViewer>
-        <Button x:Name="buttonLoop" Content="Loop" HorizontalAlignment="Left" Margin="691,19,0,0" VerticalAlignment="Top" Width="75" Click="buttonLoop_Click"/>
-        <Button x:Name="buttonCreateNode" Content="Create" HorizontalAlignment="Left" Margin="691,65,0,0" VerticalAlignment="Top" Width="75" Click="buttonCreateNode_Click"/>
+        <Button x:Name="buttonLoop" Content="Loop" HorizontalAlignment="Left" Margin="691,24,0,0" VerticalAlignment="Top" Width="75" Click="buttonLoop_Click"/>
+        <Button x:Name="buttonCreateNode" Content="Create" HorizontalAlignment="Left" Margin="691,61,0,0" VerticalAlignment="Top" Width="75" Click="buttonCreateNode_Click"/>
+        <Button x:Name="buttonDeleteNode" Content="Delete" HorizontalAlignment="Left" Margin="691,95,0,0" VerticalAlignment="Top" Width="75" Click="buttonDeleteNode_Click"/>
+        <Button x:Name="buttonXMLtoJSON" Content="XML&gt;JSON" HorizontalAlignment="Left" Margin="691,129,0,0" VerticalAlignment="Top" Width="75" Click="buttonXMLtoJSON_Click"/>
 
     </Grid>
 </Window>
